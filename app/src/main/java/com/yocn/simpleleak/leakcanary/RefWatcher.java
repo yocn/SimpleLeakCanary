@@ -1,4 +1,4 @@
-package com.andev.learnleakcanary.leakcanary;
+package com.yocn.simpleleak.leakcanary;
 
 
 import android.os.Handler;

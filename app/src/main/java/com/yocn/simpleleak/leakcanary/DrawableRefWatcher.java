@@ -1,4 +1,4 @@
-package com.andev.learnleakcanary.leakcanary;
+package com.yocn.simpleleak.leakcanary;
 
 
 import android.app.Activity;
@@ -6,7 +6,7 @@ import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.andev.learnleakcanary.BaseActivity;
+import com.yocn.simpleleak.BaseActivity;
 
 public final class DrawableRefWatcher {
     public static final String TAG = "RefWatcher";

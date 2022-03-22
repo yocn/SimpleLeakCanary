@@ -1,4 +1,4 @@
-package com.andev.learnleakcanary;
+package com.yocn.simpleleak;
 
 import android.content.Intent;
 import android.os.Bundle;

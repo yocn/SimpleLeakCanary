@@ -1,4 +1,4 @@
-package com.andev.learnleakcanary;
+package com.yocn.simpleleak;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

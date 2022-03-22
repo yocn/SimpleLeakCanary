@@ -1,4 +1,4 @@
-package com.andev.learnleakcanary.leakcanary;
+package com.yocn.simpleleak.leakcanary;
 
 
 import android.app.Activity;
@@ -6,13 +6,11 @@ import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.andev.learnleakcanary.BaseActivity;
-
-public final class ViewRefWatcher {
+public final class ActivityRefWatcher {
 	public static final String TAG = "RefWatcher";
 
 	public static void install(Application application, RefWatcher refWatcher) {
-		new ViewRefWatcher(application, refWatcher).watchActivities();
+		new ActivityRefWatcher(application, refWatcher).watchActivities();
 	}
 
 	private final Application.ActivityLifecycleCallbacks lifecycleCallbacks =
@@ -37,7 +35,7 @@ public final class ViewRefWatcher {
 
 				@Override public void onActivityDestroyed(Activity activity) {
 					Log.d(TAG, activity.getLocalClassName() + " onActivityDestroyed");
-					ViewRefWatcher.this.onActivityDestroyed((BaseActivity) activity);
+					ActivityRefWatcher.this.onActivityDestroyed(activity);
 				}
 			};
 
@@ -45,16 +43,16 @@ public final class ViewRefWatcher {
 	private final RefWatcher refWatcher;
 
 	/**
-	 * Constructs an {@link ViewRefWatcher} that will make sure the activities are not leaking
+	 * Constructs an {@link ActivityRefWatcher} that will make sure the activities are not leaking
 	 * after they have been destroyed.
 	 */
-	public ViewRefWatcher(Application application, RefWatcher refWatcher) {
+	public ActivityRefWatcher(Application application, RefWatcher refWatcher) {
 		this.application = application;
 		this.refWatcher = refWatcher;
 	}
 
-	void onActivityDestroyed(BaseActivity activity) {
-		refWatcher.watch(activity.rootView, activity.rootView.getClass().getSimpleName());
+	void onActivityDestroyed(Activity activity) {
+		refWatcher.watch(activity, activity.getLocalClassName());
 	}
 
 	public void watchActivities() {

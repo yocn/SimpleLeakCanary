@@ -1,12 +1,11 @@
-package com.andev.learnleakcanary;
+package com.yocn.simpleleak;
 
 import android.app.Application;
 import android.util.Log;
 
-import com.andev.learnleakcanary.leakcanary.ActivityRefWatcher;
-import com.andev.learnleakcanary.leakcanary.DrawableRefWatcher;
-import com.andev.learnleakcanary.leakcanary.RefWatcher;
-import com.andev.learnleakcanary.leakcanary.ViewRefWatcher;
+import com.yocn.simpleleak.leakcanary.ActivityRefWatcher;
+import com.yocn.simpleleak.leakcanary.DrawableRefWatcher;
+import com.yocn.simpleleak.leakcanary.RefWatcher;
 
 public class LearnLeakCanaryApplication extends Application {
 

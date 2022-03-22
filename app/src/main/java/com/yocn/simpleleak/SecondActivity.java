@@ -1,10 +1,9 @@
-package com.andev.learnleakcanary;
+package com.yocn.simpleleak;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 
 public class SecondActivity extends BaseActivity {

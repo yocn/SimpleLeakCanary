@@ -1,4 +1,4 @@
-package com.andev.learnleakcanary;
+package com.yocn.simpleleak;
 
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
